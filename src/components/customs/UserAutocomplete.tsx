@@ -1,11 +1,12 @@
 import * as React from 'react';
+
+import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
+import { Box, ButtonGroup, IconButton, Typography } from '@mui/material';
 import { FormattedMessage, useIntl } from 'react-intl';
-import Flex from 'ui-component/Flex';
 
 import CloseIcon from '@mui/icons-material/Close';
 import DoneIcon from '@mui/icons-material/Done';
-import { Box, ButtonGroup, IconButton, Typography } from '@mui/material';
-import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
+import Flex from 'ui-component/Flex';
 import TextField from '@mui/material/TextField';
 
 const filter = createFilterOptions<TUserOptionType>();
@@ -79,7 +80,7 @@ const UserAutocomplete: React.FC<TUserAutocompleteProps> = ({ readonly = false }
             <TextField
               {...params}
               label={
-                intl.formatMessage({ id: 'username' }) +
+                intl.formatMessage({ id: 'name' }) +
                 ' ' +
                 intl.formatMessage({ id: 'or' }) +
                 ' ' +

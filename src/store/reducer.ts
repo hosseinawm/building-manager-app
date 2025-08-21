@@ -1,6 +1,6 @@
 // third-party
 import { combineReducers } from 'redux';
-
+import { managementApi } from "services/managementApi";
 import menuReducer from './slices/menu';
 // import { persistReducer } from 'redux-persist';
 // import storage from 'redux-persist/lib/storage';
@@ -11,7 +11,8 @@ import snackbarReducer from './slices/snackbar';
 
 const reducer = combineReducers({
   snackbar: snackbarReducer,
-  menu: menuReducer
+  menu: menuReducer,
+  [managementApi.reducerPath]: managementApi.reducer, 
   // menu: persistReducer(
   //   {
   //     key: 'menu',

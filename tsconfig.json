@@ -27,7 +27,8 @@
     "paths": {
       "ui-component": ["components/ui-component"],
       "ui-component/*": ["components/ui-component/*"],
-      "customs/*": ["components/customs/*"]
+      "customs/*": ["components/customs/*"],
+      "services/*": ["store/services/*"]
     },
     "plugins": [
       {

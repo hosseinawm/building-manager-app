@@ -1,15 +1,15 @@
-import { SyntheticEvent } from 'react';
+// material-ui
+import { Alert, Button, Fade, Grow, IconButton, Slide, SlideProps } from '@mui/material';
 // project import
 import { useDispatch, useSelector } from 'store';
-import { closeSnackbar } from 'store/slices/snackbar';
-// types
-import { KeyedObject } from 'types';
 
 // assets
 import CloseIcon from '@mui/icons-material/Close';
-// material-ui
-import { Alert, Button, Fade, Grow, IconButton, Slide, SlideProps } from '@mui/material';
+// types
+import { KeyedObject } from 'types';
 import MuiSnackbar from '@mui/material/Snackbar';
+import { SyntheticEvent } from 'react';
+import { closeSnackbar } from 'store/slices/snackbar';
 
 // animation function
 function TransitionSlideLeft(props: SlideProps) {
@@ -47,7 +47,7 @@ const animation: KeyedObject = {
 const Snackbar = () => {
   const dispatch = useDispatch();
   const snackbar = useSelector((state) => state.snackbar);
-  const { actionButton, anchorOrigin, alert, close, message, open, transition, variant } = snackbar;
+  const {  anchorOrigin, alert, close, message, open, transition, variant,actionButton } = snackbar;
 
   const handleClose = (event: SyntheticEvent | Event, reason?: string) => {
     if (reason === 'clickaway') {
