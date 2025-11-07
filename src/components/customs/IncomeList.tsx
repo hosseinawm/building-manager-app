@@ -30,14 +30,6 @@ import UserAutocomplete from './UserAutocomplete';
 const successSX = { color: 'success.dark' };
 const errorSX = { color: 'error.main' };
 
-const paymentTypes = [
-  { value: 'repair', label: 'Repairing' },
-  { value: 'gas', label: 'Gas Bills' },
-  { value: 'electricity', label: 'Electricity' },
-  { value: 'water', label: 'Water Bills' },
-  { value: 'other', label: 'Other' }
-];
-
 const IncomeList: React.FC = () => {
   const [open, setOpen] = React.useState(false);
 

@@ -1,4 +1,4 @@
-import { Card, CardContent, Grid, Typography, useMediaQuery } from '@mui/material';
+import { Box, Card, CardContent, Grid, Typography, useMediaQuery } from '@mui/material';
 
 // types
 import { GenericCardProps } from 'types';
@@ -9,9 +9,10 @@ import { useTheme } from '@mui/material/styles';
 
 interface RevenueCardProps extends GenericCardProps {
   sx?: any;
+  action?: React.ReactNode;
 }
 
-const RevenueCard = ({ primary, secondary, content, iconPrimary, color, sx }: RevenueCardProps) => {
+const RevenueCard = ({ primary, secondary, content, iconPrimary, color, sx, action }: RevenueCardProps) => {
   const theme = useTheme();
   const matchDownXs = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -37,6 +38,9 @@ const RevenueCard = ({ primary, secondary, content, iconPrimary, color, sx }: Re
         >
           {primaryIcon}
         </Typography>
+
+        {action && <Box sx={{ position: 'absolute', right: 35, top: 45 }}>{action}</Box>}
+
         <Grid container direction={matchDownXs ? 'column' : 'row'} spacing={1}>
           <Grid item xs={12}>
             <Typography variant="h5" color="inherit">

@@ -26,8 +26,16 @@
   "cancel": "لغو",
   "or": "یا",
   "create-user-message": "ساختن کاربر جدید",
-  "courts-plan": "برنامه‌ی زمین‌ها",
+  "panels": "پنل ها",
   "settings": "تنظیمات",
   "canceled-court": "با موفقیت کنسل شد",
-  "enter_username_phone_hint": "enter_username_phone_hint"
+  "enter_username_phone_hint": "enter_username_phone_hint",
+  "residents": "ساکنین",
+  "panel": "لیست ساختمان ها",
+  "manager-panel": "پنل مدیریت",
+  "managing": "مدیریت",
+  "charges": "شارژ ساختمان",
+  "paid-list": "ثبت هزینه ها",
+  "income-list": "درآمدها",
+  "support": "پشتیبانی"
 }

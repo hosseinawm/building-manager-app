@@ -1,15 +1,15 @@
 // types
 import { NavItemType } from 'types';
 
-import other from './other';
-import pages from './pages';
 // menu import
-import samplePage from './sample-page';
+import panelPage from './panelPage';
+import pages from './pages';
+import other from './other';
 
 // ==============================|| MENU ITEMS ||============================== //
 
 const menuItems: { items: NavItemType[] } = {
-  items: [samplePage, pages, other]
+  items: [panelPage, pages, other]
 };
 
 export default menuItems;

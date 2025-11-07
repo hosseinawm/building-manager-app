@@ -8,17 +8,12 @@ import { KeyedObject } from 'types';
 // material-ui
 import { useTheme } from '@mui/material/styles';
 
-// constant
-const headerSX = {
-  '& .MuiCardHeader-action': { mr: 0 }
-};
-
 // ==============================|| CUSTOM MAIN CARD ||============================== //
 
 export interface MainCardProps extends KeyedObject {
   border?: boolean;
   boxShadow?: boolean;
-  children: React.ReactNode | string;
+  children?: React.ReactNode | string;
   style?: React.CSSProperties;
   content?: boolean;
   className?: string;
@@ -52,6 +47,10 @@ const MainCard = React.forwardRef(
   ) => {
     const theme = useTheme();
 
+    const headerSX = {
+      '& .MuiCardHeader-action': { mr: 0 }
+    };
+
     return (
       <Card
         ref={ref}
@@ -67,23 +66,23 @@ const MainCard = React.forwardRef(
           ...sx
         }}
       >
-        {/* card header and action */}
         {!darkTitle && title && <CardHeader sx={headerSX} title={title} action={secondary} />}
         {darkTitle && title && <CardHeader sx={headerSX} title={<Typography variant="h3">{title}</Typography>} action={secondary} />}
 
-        {/* content & header divider */}
         {title && <Divider />}
 
-        {/* card content */}
-        {content && (
+        {content ? (
           <CardContent sx={contentSX} className={contentClass}>
             {children}
           </CardContent>
+        ) : (
+          children
         )}
-        {!content && children}
       </Card>
     );
   }
 );
+
+MainCard.displayName = 'MainCard';
 
 export default MainCard;

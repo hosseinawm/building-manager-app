@@ -14,8 +14,8 @@ const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
-      immutableCheck: false,
-    }).concat(managementApi.middleware),  
+      immutableCheck: false
+    }).concat(managementApi.middleware)
 });
 
 const persister = persistStore(store);

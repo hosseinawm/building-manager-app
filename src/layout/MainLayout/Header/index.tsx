@@ -4,7 +4,7 @@ import useConfig from 'hooks/useConfig';
 import { useDispatch, useSelector } from 'store';
 import { openDrawer } from 'store/slices/menu';
 
-import { Avatar, Box, useMediaQuery } from '@mui/material';
+import { Avatar, Box, Button, Link, Toolbar, useMediaQuery } from '@mui/material';
 // material-ui
 import { useTheme } from '@mui/material/styles';
 // assets
@@ -12,10 +12,17 @@ import { IconMenu2 } from '@tabler/icons-react';
 
 import LogoSection from '../LogoSection';
 import ProfileSection from './ProfileSection';
+import MobileMenu from 'layout/HomeLayout/HomeHeader/MobileMenu';
 
 // ==============================|| MAIN NAVBAR / HEADER ||============================== //
 
-const Header = () => {
+interface HeaderProps {
+  hideToggle?: boolean;
+  hideProfile?: boolean;
+  hideLinks?: boolean;
+}
+
+const Header = ({ hideToggle, hideProfile, hideLinks }: HeaderProps) => {
   const theme = useTheme();
 
   const dispatch = useDispatch();
@@ -39,7 +46,7 @@ const Header = () => {
         <Box component="span" sx={{ display: { xs: 'none', md: 'block' }, flexGrow: 1 }}>
           <LogoSection />
         </Box>
-        {(layout === LAYOUT_CONST.VERTICAL_LAYOUT || (layout === LAYOUT_CONST.HORIZONTAL_LAYOUT && matchDownMd)) && (
+        {!hideToggle && (layout === LAYOUT_CONST.VERTICAL_LAYOUT || (layout === LAYOUT_CONST.HORIZONTAL_LAYOUT && matchDownMd)) && (
           <Avatar
             variant="rounded"
             sx={{
@@ -61,8 +68,29 @@ const Header = () => {
           </Avatar>
         )}
       </Box>
+      {!hideLinks && (
+        <Toolbar sx={{ display: 'flex', justifyContent: { xs: 'space-between', sm: 'space-evenly' }, px: { xs: 4, md: 6 } }}>
+          <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: 3 }}>
+            <Button component={Link} href="/" color="inherit">
+              خانه
+            </Button>
+            <Button component={Link} href="/about" color="inherit">
+              درباره
+            </Button>
+            <Button component={Link} href="/contact" color="inherit">
+              ارتباط با ما
+            </Button>
+            <Button component={Link} href="/panel" variant="outlined" sx={{ display: { xs: 'none', sm: 'flex' } }}>
+              ورود به برنامه
+            </Button>
+          </Box>
+          <Box sx={{ display: { xs: 'flex', sm: 'none' } }}>
+            <MobileMenu />
+          </Box>
+        </Toolbar>
+      )}
       <Box sx={{ flexGrow: 1 }} />
-      <ProfileSection />
+      {!hideProfile && <ProfileSection />}
     </>
   );
 };

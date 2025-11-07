@@ -47,7 +47,7 @@ const animation: KeyedObject = {
 const Snackbar = () => {
   const dispatch = useDispatch();
   const snackbar = useSelector((state) => state.snackbar);
-  const {  anchorOrigin, alert, close, message, open, transition, variant,actionButton } = snackbar;
+  const { anchorOrigin, alert, close, message, open, transition, variant, actionButton } = snackbar;
 
   const handleClose = (event: SyntheticEvent | Event, reason?: string) => {
     if (reason === 'clickaway') {

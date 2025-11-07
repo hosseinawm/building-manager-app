@@ -7,7 +7,7 @@ import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 // project imports
 import MainCard from 'ui-component/cards/MainCard';
 // third party
-import PerfectScrollbar from 'react-perfect-scrollbar';
+// import PerfectScrollbar from 'react-perfect-scrollbar';
 
 // ===========================|| DASHBOARD ANALYTICS - TOTAL REVENUE CARD ||=========================== //
 

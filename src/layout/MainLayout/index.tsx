@@ -110,7 +110,7 @@ const MainLayout: FC<Props> = ({ children }) => {
   const header = useMemo(
     () => (
       <Toolbar sx={{ p: condition ? '10px' : '16px' }}>
-        <Header />
+        <Header hideLinks />
       </Toolbar>
     ),
     // eslint-disable-next-line react-hooks/exhaustive-deps

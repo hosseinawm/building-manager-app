@@ -221,4 +221,4 @@ const PaidList: React.FC = () => {
 };
 
 export default PaidList;
-type Props = {};
+// type Props = {};

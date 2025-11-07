@@ -8,7 +8,7 @@ import { ConfigProps } from 'types/config';
 // like '/berry-material-react/react/default'
 export const BASE_PATH = '';
 
-export const DASHBOARD_PATH = '/';
+export const DASHBOARD_PATH = '/panel';
 export const HORIZONTAL_MAX_ITEM = 7;
 
 const vazir = Vazirmatn({ subsets: ['arabic', 'latin'], weight: ['300', '400', '500', '700'] });

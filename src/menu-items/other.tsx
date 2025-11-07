@@ -4,12 +4,13 @@ import { FormattedMessage } from 'react-intl';
 import { NavItemType } from 'types';
 
 // assets
-import { IconHelp, IconSitemap } from '@tabler/icons-react';
+import { IconHelp, IconSitemap, IconBriefcase } from '@tabler/icons-react';
 
 // constant
 const icons = {
   IconHelp,
-  IconSitemap
+  IconSitemap,
+  IconBriefcase
 };
 
 // ==============================|| SAMPLE PAGE & DOCUMENTATION MENU ITEMS ||============================== //
@@ -23,19 +24,19 @@ const other: NavItemType = {
       id: 'documentation',
       title: <FormattedMessage id="documentation" />,
       type: 'item',
-      url: 'https://codedthemes.gitbook.io/berry/',
-      icon: icons.IconHelp,
-      external: true,
-      target: true
+      url: '/documentation',
+      icon: icons.IconBriefcase
+
+      // external: true
+      // target: true
     },
     {
-      id: 'roadmap',
-      title: <FormattedMessage id="roadmap" />,
+      id: 'support',
+      title: <FormattedMessage id="support" />,
       type: 'item',
-      url: 'https://codedthemes.gitbook.io/berry/roadmap',
-      icon: icons.IconSitemap,
-      external: true,
-      target: true
+      url: '/support',
+      icon: icons.IconHelp,
+      external: true
     }
   ]
 };

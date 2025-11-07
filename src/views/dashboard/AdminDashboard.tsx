@@ -1,14 +1,17 @@
 'use client';
 
-import AccountCircleTwoTone from '@mui/icons-material/AccountCircleTwoTone';
-import { Grid } from '@mui/material';
-import IncomeList from 'customs/IncomeList';
-import MonetizationOnTwoToneIcon from '@mui/icons-material/MonetizationOnTwoTone';
-import PaidList from 'customs/PaidList';
 import React from 'react';
+
+//styles
+import { Grid, useTheme } from '@mui/material';
+import AccountCircleTwoTone from '@mui/icons-material/AccountCircleTwoTone';
+import MonetizationOnTwoToneIcon from '@mui/icons-material/MonetizationOnTwoTone';
+
+//components
+import PaidList from 'customs/PaidList';
+import IncomeList from 'customs/IncomeList';
+import DeptorsList from 'customs/DeptorsList';
 import RevenueCard from 'ui-component/cards/RevenueCard';
-import TotalRevenue from 'components/widgets/Data/totalRevenue';
-import { useTheme } from '@mui/material/styles';
 
 const AdminDashboard: React.FC<Props> = () => {
   const theme = useTheme();
@@ -18,7 +21,7 @@ const AdminDashboard: React.FC<Props> = () => {
         <Grid item xs={12} sm={6}>
           <RevenueCard
             sx={{ flex: 1 }}
-            primary="موجودی"
+            primary="موجودی صندوق"
             secondary="$42,562"
             content="$50,032 ماه گذشته"
             iconPrimary={MonetizationOnTwoToneIcon}
@@ -27,16 +30,15 @@ const AdminDashboard: React.FC<Props> = () => {
         </Grid>
         <Grid item xs={12} sm={6}>
           <RevenueCard
-            sx={{ flex: 1 }}
+            sx={{ flex: 1, height: 125 }}
             primary="طلب از ساکنین"
             secondary="486"
-            content="20% Increase"
             iconPrimary={AccountCircleTwoTone}
             color={theme.palette.primary.main}
           />
         </Grid>
         <Grid item xs={12} lg={4} md={6}>
-          <TotalRevenue title="بدهکاران" />
+          <DeptorsList />
         </Grid>
         <Grid item xs={12} lg={4} md={6}>
           <IncomeList />
