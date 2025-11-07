@@ -46,10 +46,9 @@ const Panel = () => {
       <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', mt: '4rem', rowGap: 6 }}>
         <Typography variant="h1">لیست ساختمان ها</Typography>
 
-        <Box>salam</Box>
-
         <Button
           variant="contained"
+          color="secondary"
           onClick={handleNewService}
           sx={{
             width: '18rem',
@@ -58,13 +57,10 @@ const Panel = () => {
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'column',
-            color: 'white',
-            bgcolor: 'secondary.main'
+            color: 'black'
           }}
         >
-          <Typography variant="h4" sx={{ color: 'white' }}>
-            ساختمان جدید
-          </Typography>
+          <Typography variant="h4">ساختمان جدید</Typography>
           <AddBoxIcon sx={{ fontSize: '4rem' }} />
         </Button>
       </Box>

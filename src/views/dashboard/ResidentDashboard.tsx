@@ -8,7 +8,6 @@ import MonetizationOnTwoToneIcon from '@mui/icons-material/MonetizationOnTwoTone
 import RevenueCard from 'ui-component/cards/RevenueCard';
 import IncomeList from 'customs/IncomeList';
 import PaidList from 'customs/PaidList';
-import { color } from 'framer-motion';
 
 const ResidentDashboard: React.FC<Props> = () => {
   const theme = useTheme();
@@ -18,12 +17,12 @@ const ResidentDashboard: React.FC<Props> = () => {
       <Grid container spacing={2} sx={{ mb: 3 }}>
         <Grid item xs={12} sm={6}>
           <RevenueCard
-            sx={{ flex: 1, color: 'black' }}
+            sx={{ flex: 1 }}
             primary="موجودی صندوق"
             secondary="11"
             content="11 ماه گذشته"
             iconPrimary={MonetizationOnTwoToneIcon}
-            color={theme.palette.warning.main}
+            color={theme.palette.secondary.main}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -31,13 +30,9 @@ const ResidentDashboard: React.FC<Props> = () => {
             sx={{ flex: 1, height: 125 }}
             primary="میزان شارژ قابل پرداخت"
             secondary="486"
-            color={theme.palette.error.main}
+            color={theme.palette.primary.main}
             action={
-              <Button
-                variant="contained"
-                size="medium"
-                sx={{ background: theme.palette.primary.main, '&:hover': { background: theme.palette.primary.dark } }}
-              >
+              <Button variant="contained" size="medium" color="secondary">
                 پرداخت شارژ
               </Button>
             }
