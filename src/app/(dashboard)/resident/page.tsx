@@ -1,4 +1,4 @@
-import ResidentDashboard from 'views/dashboard/ResidentDashboard';
+import ResidentDashboard from 'views/dashboard/resident/ResidentDashboard';
 
 const page = () => {
   return <ResidentDashboard />;

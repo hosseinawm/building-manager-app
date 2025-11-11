@@ -1,7 +1,8 @@
 import React from 'react';
+import IncomesTab from 'views/dashboard/manager/incomesTab/IncomesTab';
 
 const page = () => {
-  return <div>incomes</div>;
+  return <IncomesTab />;
 };
 
 export default page;
