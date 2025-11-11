@@ -1,4 +1,4 @@
-import AdminDashboard from 'views/dashboard/AdminDashboard';
+import AdminDashboard from 'views/dashboard/manager/AdminDashboard';
 
 const page = () => {
   return <AdminDashboard />;

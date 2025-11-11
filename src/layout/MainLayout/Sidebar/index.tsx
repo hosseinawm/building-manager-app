@@ -6,9 +6,9 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 import { useDispatch, useSelector } from 'store';
 import { drawerWidth } from 'store/constant';
 import { openDrawer } from 'store/slices/menu';
-import Chip from 'ui-component/extended/Chip';
+// import Chip from 'ui-component/extended/Chip';
 
-import { Box, Drawer, Stack, useMediaQuery } from '@mui/material';
+import { Box, Drawer, useMediaQuery } from '@mui/material';
 // material-ui
 import { useTheme } from '@mui/material/styles';
 
@@ -27,7 +27,7 @@ const Sidebar = () => {
   const dispatch = useDispatch();
   const { drawerOpen } = useSelector((state) => state.menu);
 
-  const { layout, drawerType } = useConfig();
+  const { drawerType } = useConfig();
 
   const logo = useMemo(
     () => (
@@ -41,11 +41,11 @@ const Sidebar = () => {
   const drawerContent = (
     <>
       <MenuList />
-      {layout === LAYOUT_CONST.VERTICAL_LAYOUT && drawerOpen && (
+      {/* {layout === LAYOUT_CONST.VERTICAL_LAYOUT && drawerOpen && (
         <Stack direction="row" justifyContent="center" sx={{ mb: 2 }}>
           <Chip label={process.env.REACT_APP_VERSION} disabled chipcolor="secondary" size="small" sx={{ cursor: 'pointer' }} />
         </Stack>
-      )}
+      )} */}
     </>
   );
 

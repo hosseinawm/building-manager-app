@@ -2,7 +2,6 @@ import { DASHBOARD_PATH } from 'config';
 import { Formik } from 'formik';
 import useAuth from 'hooks/useAuth';
 import useScriptRef from 'hooks/useScriptRef';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 // project imports
@@ -13,20 +12,7 @@ import * as Yup from 'yup';
 // assets
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import {
-  Box,
-  Button,
-  Checkbox,
-  FormControl,
-  FormControlLabel,
-  FormHelperText,
-  Grid,
-  IconButton,
-  InputAdornment,
-  InputLabel,
-  OutlinedInput,
-  Typography
-} from '@mui/material';
+import { Box, Button, FormControl, FormHelperText, IconButton, InputAdornment, InputLabel, OutlinedInput } from '@mui/material';
 // material-ui
 import { useTheme } from '@mui/material/styles';
 
@@ -38,7 +24,7 @@ const JWTLogin = ({ loginProp, ...others }: { loginProp?: number }) => {
   const { login } = useAuth();
   const scriptedRef = useScriptRef();
 
-  const [checked, setChecked] = React.useState(true);
+  // const [checked, setChecked] = React.useState(true);
 
   const [showPassword, setShowPassword] = React.useState(false);
   const handleClickShowPassword = () => {
@@ -129,7 +115,7 @@ const JWTLogin = ({ loginProp, ...others }: { loginProp?: number }) => {
               </FormHelperText>
             )}
           </FormControl>
-
+          {/* 
           <Grid container alignItems="center" justifyContent="space-between">
             <Grid item>
               <FormControlLabel
@@ -144,7 +130,7 @@ const JWTLogin = ({ loginProp, ...others }: { loginProp?: number }) => {
                 Forgot Password?
               </Typography>
             </Grid>
-          </Grid>
+          </Grid> */}
 
           {errors.submit && (
             <Box sx={{ mt: 3 }}>
@@ -154,7 +140,7 @@ const JWTLogin = ({ loginProp, ...others }: { loginProp?: number }) => {
           <Box sx={{ mt: 2 }}>
             <AnimateButton>
               <Button color="secondary" disabled={isSubmitting} fullWidth size="large" type="submit" variant="contained">
-                Sign In
+                ارسال
               </Button>
             </AnimateButton>
           </Box>

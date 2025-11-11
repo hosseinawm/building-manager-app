@@ -1,7 +1,8 @@
 import React from 'react';
+import ResidentsTab from 'views/dashboard/manager/residentsTab/ResidentsTab';
 
 const page = () => {
-  return <div>residents</div>;
+  return <ResidentsTab />;
 };
 
 export default page;
